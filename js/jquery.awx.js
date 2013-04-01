@@ -342,16 +342,20 @@
 			};
 
 			$('.exitXBMC').click(function() {
-				xbmc.shutdown({type: 'quit', onSuccess: showQuitMessage, onError: failed}); return false;
+				if (confirm(mkf.lang.get('Are you sure you want to quit XBMC?'))) xbmc.shutdown({type: 'quit', onSuccess: showQuitMessage, onError: failed}); 
+				return false;
 			});
 			$('.shutdown').click(function() {
-				xbmc.shutdown({type: 'shutdown', onSuccess: showQuitMessage, onError: failed}); return false;
+				if (confirm(mkf.lang.get('Are you sure you want to shutdown the computer?'))) xbmc.shutdown({type: 'shutdown', onSuccess: showQuitMessage, onError: failed}); 
+				return false;
 			});
 			$('.suspend').click(function() {
-				xbmc.shutdown({type: 'suspend', onSuccess: showQuitMessage, onError: failed}); return false;
+				if (confirm(mkf.lang.get('Are you sure you want to suspect the computer?'))) xbmc.shutdown({type: 'suspend', onSuccess: showQuitMessage, onError: failed}); 
+				return false;
 			});
 			$('.reboot').click(function() {
-				xbmc.shutdown({type: 'reboot', onSuccess: showQuitMessage, onError: failed}); return false;
+				if (confirm(mkf.lang.get('Are you sure you want to reboot the computer?'))) xbmc.shutdown({type: 'reboot', onSuccess: showQuitMessage, onError: failed}); 
+				return false;
 			});
 			$('.bigLeft').click(function() {
 				xbmc.input({type: 'Left', onError: failed}); return false;
